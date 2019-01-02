@@ -7,16 +7,16 @@ import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 
 @SpringBootApplication
-public class SpringBootReactApplication implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+public class SpringBootReactApplication implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory>  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootReactApplication.class, args);
 	}
 
-	@Override
+    @Override
 	public void customize(ConfigurableServletWebServerFactory factory) {
 		factory.setPort(8090);
-		factory.setContextPath("/https-demo");
+		factory.setContextPath("/spring-boot-react");
 		factory.setSsl(getSsl());
 	}
 
